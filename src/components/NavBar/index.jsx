@@ -6,12 +6,13 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CartWidget from '../cart-widget';
+import logo from './assets/logo2.png';
 
 
 const NavBar = () => {
   return (
   <Box sx={{ flexGrow: 1 }}>
-    <AppBar position="static">
+    <AppBar position="static" sx={{backgroundColor:'#8ebb90'}}>
       <Toolbar>
         <IconButton
           size="large"
@@ -22,8 +23,10 @@ const NavBar = () => {
         >
           <MenuIcon />
         </IconButton>
+        <img src={logo} alt="logo"/>
+        
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Flower Child
+         
         </Typography>
         <CartWidget />
       </Toolbar>
