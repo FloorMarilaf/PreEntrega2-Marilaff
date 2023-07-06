@@ -21,7 +21,7 @@ const NavBar = () => {
           aria-label="menu"
           sx={{ mr: 2 }}
         >
-          <MenuIcon />
+        <MenuIcon />
         </IconButton>
         <img src={logo} alt="logo"/>
         
