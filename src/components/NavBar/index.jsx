@@ -2,33 +2,28 @@ import React from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import CartWidget from '../cart-widget';
 import logo from './assets/logo2.png';
+import { NavLink, Link } from 'react-router-dom';
 
 
 const NavBar = () => {
   return (
   <Box sx={{ flexGrow: 1 }}>
-    <AppBar position="static" sx={{backgroundColor:'#8ebb90'}}>
-      <Toolbar>
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        >
-        <MenuIcon />
-        </IconButton>
-        <img src={logo} alt="logo"/>
-        
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-         
-        </Typography>
-        <CartWidget />
+    <AppBar position="static" justifyContent= {'spacce-around'} sx={{backgroundColor:'#8ebb90'}}>
+      <Toolbar display={'flex'} justifyContent={'start'} flexDirection= {'row'} gap ={7}>
+        <Box >
+        <Link display={'flex'} justifyContent={'space-around'} flexDirection={'row'} gap={7}> <img src={logo} alt="logo"/></Link>
+        </Box>
+        <Box display={'flex'} justifyContent={'space-around'} flexDirection={'row'} gap={7}>
+          <NavLink to ={`/category/picadores`}className ={({isActive})=>isActive ? 'ActiveOption': 'Option'}>Picadores</NavLink>
+          <NavLink to ={`/category/pipas`}className ={({isActive})=>isActive ? 'ActiveOption': 'Option'}>Pipas</NavLink>
+          <NavLink to ={`/category/ceniceros`}className ={({isActive})=>isActive ? 'ActiveOption': 'Option'}>Ceniceros</NavLink>
+          <NavLink to ={`/category/sedas`}className ={({isActive})=>isActive ? 'ActiveOption': 'Option'}>Sedas</NavLink>
+        </Box>
+        <Box> 
+          <CartWidget />
+        </Box>
       </Toolbar>
     </AppBar>
   </Box>
